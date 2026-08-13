@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  background: #f5f5f7;
+}
+#trabalhos {
+  display: flex;
+  gap: 8px;
+  padding: 35px 44px;
+}
+#trabalhos span {
+    padding: 10px;
+    background:  #ae6e71;
+    color:#dfe3df;
+    text-align: center;
+     font-weight: bold;
+}
+#direita, #esquerda{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+#trabalhos img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+
+@media (min-width: 768px) {
+  #trabalhos {
+    max-width: 480px;
+    margin: auto;
+  }
+}

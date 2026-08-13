@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.font {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 200;
+    font-size: 1.6em;
+    margin-bottom: 0.5em;
+}
+
+#agenda {
+    position: relative;
+    min-height: 100vh;
+    padding: 3em;
+    background-color:#a76063;
+    color: #dfe3df;
+    overflow: hidden;
+}
+.title{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.title h1 {
+    font-size: 3em;
+    line-height: 0.95;
+    margin: 80px 0 50px;
+}
+.lixa{
+    transform: scaleX(-1);
+    width: 150px;
+    margin: -50px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    max-width: 330px;
+}
+
+.campo select {
+    border: none;
+    border-radius: 15px;
+    font-size: 1.2em;
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 12px 50px 12px 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6' fill='none' stroke='black' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 26px;
+  }
+  .campo input{
+    border: none;
+    border-radius: 15px;
+    font-size: 1.5em;
+    appearance: none;
+    padding: 12px 50px 12px 20px;
+    height: 2em;
+  }
+.horarios {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    max-width: 330px;
+}
+
+.horarios button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    background-color: #eef0ed;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.horarios button:hover{
+    color: #dfe3df;
+    background-color: black;
+}
+
+
+@media (min-width: 768px) {
+  
+    .title{
+        padding-top: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #agenda{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+}

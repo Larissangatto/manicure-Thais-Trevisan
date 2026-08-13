@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="../css/agenda.css">
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+
+<body>
+
+<section id="agenda">
+    <div class="title">
+        <h1>Horários<br>disponíveis</h1>
+        <img class="lixa" src="../images/lixa.png" alt="Lixa">        
+    </div>
+
+
+    <div class="campo">
+
+        <label class="font" for="servico">Escolha um serviço:</label>
+
+        <select id="servico">
+            <option value="manicure">Manicure 💅🏻</option>
+            <option value="pedicure">Pedicure 🦶🏻</option>
+            <option value="mao-pe">Mão e pé 🖐🏻🦶🏻</option>
+        </select>
+
+    </div>
+
+    <div class="campo">
+
+        <label class="font" for="data">Escolha o dia:</label>
+
+        <input type="date" id="data">
+
+    </div>
+
+    <h2 class="font">Selecione o horário:</h2>
+
+    <ul class="horarios" id="horarios">
+
+        <li><button>09:00</button></li>
+        <li><button>10:00</button></li>
+        <li><button>11:00</button></li>
+        <li><button>12:00</button></li>
+        <li><button>15:00</button></li>
+        <li><button>17:00</button></li>
+        <li><button>19:00</button></li>
+
+
+    </ul>
+
+
+</section>
+
+<script src="../js/agenda.js"></script>
+
+</body>
+</html>
