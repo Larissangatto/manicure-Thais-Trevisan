@@ -1,17 +1,17 @@
 @import url("geral.css");
 
-/* --- CONTAINER PRINCIPAL (CARD ELEGANTE) --- */
+
 #agenda {
     max-width: 520px;
     margin: 0 auto 4rem auto;
-    background: #ffffff;
+    background: var(--cor-clara-neutra);
     border-radius: 20px;
     padding: 2.5rem 2rem;
-    box-shadow: 0 15px 35px rgba(143, 71, 86, 0.12);
-    border: 1px solid rgba(246, 217, 223, 0.5);
+    box-shadow: 0 15px 35px var(--sombra);
+    border: 1px solid var(--sombra);
 }
 
-/* Header do Form */
+
 .card-header {
     text-align: center;
     margin-bottom: 2rem;
@@ -36,7 +36,7 @@
     gap: 1.8rem;
 }
 
-/* --- LABELS COM NÚMERO INDICADOR --- */
+
 .campo label {
     display: flex;
     align-items: center;
@@ -60,15 +60,15 @@
     font-weight: 700;
 }
 
-/* --- CAMPOS DE SELEÇÃO E DATA --- */
+
 .campo select,
 .campo input[type="date"] {
     width: 100%;
     padding: 14px 16px;
     font-size: 0.95rem;
     color: var(--cor-texto-escuro);
-    background-color: #fafafb;
-    border: 1.5px solid #eaeaea;
+    background-color:var(--cor-clara-neutra);
+    border: 1.5px solid var(--cor-rosa-principal);
     border-radius: 12px;
     outline: none;
     transition: all 0.2s ease-in-out;
@@ -78,8 +78,8 @@
 .campo select:focus,
 .campo input[type="date"]:focus {
     border-color: var(--cor-rosa-principal);
-    background-color: #ffffff;
-    box-shadow: 0 0 0 4px rgba(228, 123, 140, 0.15);
+    background-color: var(--cor-rosa-claro);
+    box-shadow: 0 0 0 4px var(--sombra);
 }
 
 #data-escolhida {
@@ -89,7 +89,6 @@
     padding-left: 4px;
 }
 
-/* --- GRADE DE HORÁRIOS (PILS INTERATIVAS) --- */
 .horarios {
     list-style: none;
     display: grid;
@@ -112,49 +111,49 @@
 
 .horarios li button:hover {
     background-color: var(--cor-rosa-principal);
-    color: #ffffff;
+    color: var(--texto-hover);
     transform: translateY(-2px);
 }
 
 /* Estado selecionado (Adicionar essa classe pelo JS quando clicar) */
 .horarios li button.selecionado {
     background-color: var(--cor-vinho-forte);
-    color: #ffffff;
+    color: var(--texto-hover);
     border-color: var(--cor-vinho-forte);
-    box-shadow: 0 4px 12px rgba(176, 70, 93, 0.3);
+    box-shadow: 0 4px 12px var(--sombra);
 }
 
-/* --- BOTÃO PRINCIPAL --- */
+
 #agendamento {
     width: 100%;
     padding: 16px;
     font-size: 1rem;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--texto-hover);
     background-color: var(--cor-vinho-forte);
     border: none;
     border-radius: 12px;
     cursor: pointer;
     margin-top: 0.5rem;
-    box-shadow: 0 6px 20px rgba(176, 70, 93, 0.25);
+    box-shadow: 0 6px 20px var(--sombra);
     transition: all 0.2s ease;
 }
 
 #agendamento:hover:not(:disabled) {
     background-color: var(--cor-vinho);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(143, 71, 86, 0.35);
+    box-shadow: 0 8px 25px var(--sombra);
 }
 
 #agendamento:disabled {
-    background-color: #e0e0e0;
-    color: #a0a0a0;
+    background-color:var(--cor-clara-neutra);
+    color: var(--cor-rosa-suave);
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
 }
 
-/* --- RESPONSIVIDADE --- */
+
 @media (max-width: 480px) {
     #agenda {
         padding: 1.8rem 1.2rem;

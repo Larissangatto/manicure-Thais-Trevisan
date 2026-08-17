@@ -1,23 +1,21 @@
 @import url("reset.css"); 
 @import url("cores.css"); 
 
-/* --- CONFIGURAÇÃO GLOBAL --- */
 * { 
-  font-family: 'Plus Jakarta Sans', Arial, sans-serif; /* Uma fonte sans-serif muito mais moderna */
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif; 
   box-sizing: border-box;
 }
 
 body { 
   min-height: 100vh; 
-  background-color: var(--cor-rosa-claro); /* Baseada na sua paleta */
+  background-color: var(--cor-rosa-claro); 
   color: var(--cor-texto-escuro);
   padding: 20px;
 }
 
-/* --- ESTRUTURA DO MENU / TOPO --- */
 .menu { 
   display: flex; 
-  align-items: center; /* Alinha a seta verticalmente com o bloco de texto */
+  align-items: center; 
   justify-content: center; 
   margin: 2rem 0 3rem 0; 
   gap: 24px; 
@@ -27,7 +25,7 @@ body {
   margin-right: auto;
 }
 
-/* Seta de voltar */
+
 .back-home { 
   font-size: 1.8rem; 
   text-decoration: none; 
@@ -39,13 +37,12 @@ body {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4); /* Um fundo sutil de vidro para a seta */
+  background: var(--sombra);
 }
 
 .back-home:hover {
-  transform: translateX(-4px); /* Seta move levemente para a esquerda no hover */
   background: var(--cor-vinho-forte);
-  color: #ffffff;
+  color:var(--texto-hover);
 }
 
 .menu-name { 
@@ -54,10 +51,9 @@ body {
   align-items: center; 
 }
 
-/* --- TIPOGRAFIA --- */
 .title-name { 
   font-family: "Pinyon Script", cursive; 
-  font-weight: 400; /* Correção: Pinyon Script é desenhada para peso 400 */
+  font-weight: 800; 
   font-size: 4rem; 
   color: var(--cor-vinho-forte); 
   text-align: center; 
@@ -66,17 +62,17 @@ body {
 }
 
 .sub-title { 
-  font-family: 'Plus Jakarta Sans', Arial, sans-serif; /* Substituído Georgia por um estilo minimalista */
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
   font-size: 0.85rem; 
   font-weight: 600; 
-  text-transform: uppercase; /* Deixa o "MANICURE E PEDICURE" em maiúsculo elegante */
-  letter-spacing: 4px; /* Espaço chique entre as letras */
+  text-transform: uppercase; 
+  letter-spacing: 4px; 
   color: var(--cor-terroso);
   margin: 0; 
   text-align: center;
 }
 
-/* --- RESPONSIVIDADE PARA CELULAR --- */
+
 @media (max-width: 480px) { 
   .menu {
     gap: 15px;

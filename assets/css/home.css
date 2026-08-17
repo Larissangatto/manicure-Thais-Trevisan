@@ -33,7 +33,7 @@
   font-weight: 700;
   font-size: 1.05rem;
   border-radius: 40px;
-  border: 1px solid rgba(228, 123, 140, 0.2);
+  border: 1px solid var(--sombra);
   box-shadow: var(--sombra);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   height: 4.8em;
@@ -54,13 +54,13 @@
   background: var(--bg-card);
   color: var(--cor-texto-escuro);
   border:5px solid var(--cor-vinho);
-  transform: translateY(-4px); /* Efeito flutuante elegante */
-  box-shadow: 0 15px 30px rgba(143, 71, 86, 0.25);
+  transform: translateY(-4px); 
+  box-shadow: 0 15px 30px var(--sombra);
 }
 
 
 #home ul li a:hover img {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--sombra);
 }
 @media (max-width: 480px) { 
   #home ul li {
