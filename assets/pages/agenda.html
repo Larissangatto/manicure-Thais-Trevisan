@@ -20,7 +20,7 @@
             <h2 class="sub-title">Manicure e pedicure</h2>
         </div>
     </div>
-<section id="agenda">
+<!-- <section id="agenda">
     <div class="title">
         <h1>Horários disponíveis</h1>
     </div>
@@ -65,6 +65,59 @@
         Agendar horário
     </button>
 
+</section> -->
+<section id="agenda">
+    <div class="card-header">
+        <h1>Agende seu Horário</h1>
+        <p>Escolha o serviço, a data e o melhor horário para você.</p>
+    </div>
+
+    <form class="agenda-form">
+        <!-- Passo 1: Serviço -->
+        <div class="campo">
+            <label for="servico">
+                <span class="step-badge">1</span> Escolha o serviço
+            </label>
+            <div class="select-wrapper">
+                <select id="servico">
+                    <option value="" disabled selected>Selecione uma opção...</option>
+                    <option value="manicure">💅🏻 Manicure</option>
+                    <option value="pedicure">🦶🏻 Pedicure</option>
+                    <option value="mao-pe">🖐🏻🦶🏻 Mão e Pé (Completo)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Passo 2: Data -->
+        <div class="campo">
+            <label for="data">
+                <span class="step-badge">2</span> Escolha o dia
+            </label>
+            <input type="date" id="data">
+            <p id="data-escolhida"></p>
+        </div>
+
+        <!-- Passo 3: Horários -->
+        <div class="campo">
+            <label>
+                <span class="step-badge">3</span> Selecione o horário
+            </label>
+            <ul class="horarios" id="horarios">
+                <li><button type="button">09:00</button></li>
+                <li><button type="button">10:00</button></li>
+                <li><button type="button">11:00</button></li>
+                <li><button type="button">12:00</button></li>
+                <li><button type="button">15:00</button></li>
+                <li><button type="button">17:00</button></li>
+                <li><button type="button">19:00</button></li>
+            </ul>
+        </div>
+
+        <!-- Botão Ação -->
+        <button id="agendamento" type="button" disabled>
+            Confirmar Agendamento
+        </button>
+    </form>
 </section>
 
 <script src="../js/agenda.js"></script>

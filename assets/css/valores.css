@@ -1,5 +1,7 @@
 @import url("geral.css");
-
+#body-precos{
+    background: url("../images/fundo.png") top right / 250px no-repeat;
+}
 #precos {
     display: flex;
     flex-direction: column;
@@ -11,7 +13,6 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    min-width: 400px;
     gap: 2em;
     background-color: var(--cor-vinho);
     color: var(--texto-hover);
@@ -20,8 +21,8 @@
 }
 
 .servico-titulo img {
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     object-fit: contain;
     background: var(--cor-rosa-claro);
     padding: 6px;
@@ -39,6 +40,9 @@
     
 }
 @media (max-width: 768px) {
+    #body-precos{
+        background: url("../images/fundo.png") top right / 180px no-repeat;
+    }
     .servico-titulo {
         min-width: 100%;
         
@@ -46,5 +50,14 @@
     
     .servico p {
         font-size: 2em;
+    }
+    .servico-titulo img {
+        width: 52px;
+        height: 52px;
+    }
+    #precos {
+    padding-top: 2em;
+    align-items: start;
+    gap:2em;
     }
 }
