@@ -17,4 +17,8 @@ window.receberImagens = function (imagens) {
     painel.innerHTML = newHtml;
 
 };
+const script = document.createElement("script");
 
+script.src = URL_API + "?callback=receberImagens";
+
+document.head.appendChild(script);
