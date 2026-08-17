@@ -1,0 +1,19 @@
+:root {
+    --cor-rosa-principal: #E47B8C;
+    --cor-rosa-claro: #F6D9DF;
+    --cor-rosa-suave: #C3909B;
+    --cor-vinho: #8F4756;
+    --cor-vinho-forte: #B0465D;
+    --cor-terroso: #A76063;
+    --cor-texto-escuro: #222222;
+    --cor-clara-neutra: #DFE3DF;
+    
+    /* Mapeamento inteligente para o layout */
+    --bg-pagina: var(--cor-rosa-claro);
+    --bg-card: #ffffff;
+    --texto-card: var(--cor-vinho);
+    --bg-hover: var(--cor-vinho);
+    --texto-hover: #ffffff;
+    
+    --sombra: 0 10px 25px rgba(143, 71, 86, 0.1);
+  }

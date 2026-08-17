@@ -1,0 +1,103 @@
+@import url("reset.css"); 
+@import url("cores.css"); 
+
+/* --- CONFIGURAÇÃO GLOBAL --- */
+* { 
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif; /* Uma fonte sans-serif muito mais moderna */
+  box-sizing: border-box;
+}
+
+body { 
+  min-height: 100vh; 
+  background-color: var(--cor-rosa-claro); /* Baseada na sua paleta */
+  color: var(--cor-texto-escuro);
+  padding: 20px;
+}
+
+/* --- ESTRUTURA DO MENU / TOPO --- */
+.menu { 
+  display: flex; 
+  align-items: center; /* Alinha a seta verticalmente com o bloco de texto */
+  justify-content: center; 
+  margin: 2rem 0 3rem 0; 
+  gap: 24px; 
+  position: relative;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Seta de voltar */
+.back-home { 
+  font-size: 1.8rem; 
+  text-decoration: none; 
+  color: var(--cor-vinho-forte); 
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4); /* Um fundo sutil de vidro para a seta */
+}
+
+.back-home:hover {
+  transform: translateX(-4px); /* Seta move levemente para a esquerda no hover */
+  background: var(--cor-vinho-forte);
+  color: #ffffff;
+}
+
+.menu-name { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+}
+
+/* --- TIPOGRAFIA --- */
+.title-name { 
+  font-family: "Pinyon Script", cursive; 
+  font-weight: 400; /* Correção: Pinyon Script é desenhada para peso 400 */
+  font-size: 4rem; 
+  color: var(--cor-vinho-forte); 
+  text-align: center; 
+  line-height: 0.9;
+  margin-bottom: 5px;
+}
+
+.sub-title { 
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif; /* Substituído Georgia por um estilo minimalista */
+  font-size: 0.85rem; 
+  font-weight: 600; 
+  text-transform: uppercase; /* Deixa o "MANICURE E PEDICURE" em maiúsculo elegante */
+  letter-spacing: 4px; /* Espaço chique entre as letras */
+  color: var(--cor-terroso);
+  margin: 0; 
+  text-align: center;
+}
+
+/* --- RESPONSIVIDADE PARA CELULAR --- */
+@media (max-width: 480px) { 
+  .menu {
+    gap: 15px;
+    margin: 1.5rem 0 2rem 0;
+  }
+
+  .back-home {
+    font-size: 1.5rem;
+    width: 38px;
+    height: 38px;
+  }
+
+  .title-name { 
+    font-size: 3rem; 
+  } 
+  
+  .sub-title { 
+    font-size: 0.75rem; 
+    letter-spacing: 3px;
+  } 
+}
+
+
+    

@@ -3,18 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda</title>
-    <link rel="stylesheet" href="../css/agenda.css">
-    <link rel="stylesheet" href="../css/reset.css">
+
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
-
+<body id="body-agenda">
+    <div class="menu">
+        <a class="back-home" href="../../index.html"> ← </a>
+        <div class="menu-name">
+            <h1 class="title-name">Thais Trevisan</h1>
+            <h2 class="sub-title">Manicure e pedicure</h2>
+        </div>
+    </div>
 <section id="agenda">
     <div class="title">
-        <h1>Horários<br>disponíveis</h1>
-        <img class="lixa" src="../images/lixa.png" alt="Lixa">        
+        <h1>Horários disponíveis</h1>
     </div>
 
 
@@ -35,6 +43,7 @@
         <label class="font" for="data">Escolha o dia:</label>
 
         <input type="date" id="data">
+        <p id="data-escolhida"></p>
 
     </div>
 
@@ -52,7 +61,9 @@
 
 
     </ul>
-
+    <button id="agendamento" type="button" disabled>
+        Agendar horário
+    </button>
 
 </section>
 
