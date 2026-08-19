@@ -62,7 +62,7 @@
 
 
 .campo select,
-.campo input[type="date"] {
+.campo input {
     width: 100%;
     box-sizing: border-box;
     padding: 14px 16px;
@@ -77,7 +77,7 @@
 }
 
 .campo select:focus,
-.campo input[type="date"]:focus {
+.campo input:focus {
     border-color: var(--cor-rosa-principal);
     background-color: var(--cor-rosa-claro);
     box-shadow: 0 0 0 4px var(--sombra);
@@ -165,11 +165,7 @@
     display: none;
 }
 @media (max-width: 480px) {
-    #agenda {
-        padding: 1.8rem 1.2rem;
-        margin-bottom: 2rem;
-        max-width: 380px;
-    }
+
     .horarios {
         grid-template-columns: repeat(3, 1fr);
         gap: 8px;
