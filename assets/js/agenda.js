@@ -85,26 +85,58 @@ function exibirCamposCliente() {
       <input type="tel" id="telefone" placeholder="(00) 00000-0000" required style="width: 100%; padding: 8px; margin-top: 5px;">
     </div>
   `;
+  const inputTel = document.getElementById("telefone");
+  
+  inputTel.addEventListener("input", (e) => {
+    let v = e.target.value.replace(/\D/g, "");
+    if (v.length > 11) v = v.slice(0, 11);
+    
+    if (v.length > 6) {
+      e.target.value = `(${v.slice(0, 2)}) ${v.slice(2, 7)}-${v.slice(7)}`;
+    } else if (v.length > 2) {
+      e.target.value = `(${v.slice(0, 2)}) ${v.slice(2)}`;
+    } else if (v.length > 0) {
+      e.target.value = `(${v}`;
+    }
+  });
 
+  // 3. TERCEIRO: Ativa o botão
   btnAgendamento.disabled = false;
-
-  // Garante que o clique no botão envie os dados
   btnAgendamento.onclick = realizarAgendamento;
 }
+
 
 function ocultarCamposCliente() {
   divChecagem.innerHTML = "";
   btnAgendamento.disabled = true;
   btnAgendamento.onclick = null;
 }
+function validarCamposCliente(nome, telefone) {
+  // Limpa espaços extras das pontas
+  const nomeLimpo = nome.trim();
+  const telefoneLimpo = telefone.replace(/\D/g, ""); // Remove tudo que não for número
 
+  // 1. Validação do Nome: Precisa ter pelo menos 2 palavras e no mínimo 3 caracteres
+  const partesNome = nomeLimpo.split(" ").filter(p => p.length > 0);
+  if (partesNome.length < 2 || nomeLimpo.length < 3) {
+    alert("Por favor, digite seu nome e sobrenome.");
+    return false;
+  }
+
+  // 2. Validação do Telefone: DDD (2 dígitos) + Número (8 ou 9 dígitos) -> Total de 10 ou 11 dígitos
+  if (telefoneLimpo.length < 10 || telefoneLimpo.length > 11) {
+    alert("Por favor, digite um telefone/WhatsApp válido com DDD. Ex: (11) 99999-9999");
+    return false;
+  }
+
+  return true; // Se passou em tudo
+}
 // Envia o agendamento (POST) para o Apps Script
 function realizarAgendamento() {
   const nomeInput = document.getElementById("nome");
   const telefoneInput = document.getElementById("telefone");
 
-  if (!nomeInput.value.trim() || !telefoneInput.value.trim()) {
-    alert("Por favor, preencha seu nome e telefone!");
+  if (!validarCamposCliente(nomeInput.value, telefoneInput.value)) {
     return;
   }
 
@@ -141,8 +173,7 @@ function realizarAgendamento() {
     body: JSON.stringify(dadosAgendamento)
   })
   .then(() => {
-      alert(`✨ Agendamento confirmado com sucesso!\n\n💅 Serviço: ${servicoNome}\n📅 Data: ${dataFormatada}\n⏰ Horário: ${horarioSelecionado}\n
-        Se precisar cancelar ou alterar horário por favor entre em contato.`);
+      alert(`✨ Agendamento confirmado com sucesso!\n\n💅 Serviço: ${servicoNome}\n📅 Data: ${dataFormatada}\n⏰ Horário: ${horarioSelecionado}\n Se precisar cancelar ou alterar horário por favor entre em contato.`);
     location.reload();
   })
   .catch(err => {
