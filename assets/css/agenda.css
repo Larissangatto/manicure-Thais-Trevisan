@@ -152,14 +152,26 @@
     box-shadow: none;
     transform: none;
 }
-
-
+.temporario {
+    padding: 1em;
+    text-align: center;
+    background-color:var(--cor-clara-neutra);
+    color: var(--cor-rosa-suave);
+    margin-top: -5px;
+    margin-bottom: 15px;
+}
+.escondido{
+    display: none;
+}
 @media (max-width: 480px) {
     #agenda {
         padding: 1.8rem 1.2rem;
         margin-bottom: 2rem;
+        max-width: 380px;
     }
-
+    .campo input[type="date"] {
+        width: 100%;
+    }
     .horarios {
         grid-template-columns: repeat(3, 1fr);
         gap: 8px;

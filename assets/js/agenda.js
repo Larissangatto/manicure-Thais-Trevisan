@@ -4,23 +4,44 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxCAERNDbdDJmWUz6Cew
 const selectServico = document.getElementById("servico");
 const inputData = document.getElementById("data");
 const ulHorarios = document.getElementById("horarios");
+const avisos = document.getElementById("aviso");
 const divChecagem = document.getElementById("checagem");
 const btnAgendamento = document.getElementById("agendamento");
+const instrucao = document.getElementById("mensagem-instrucao");
 
 // Variáveis para armazenar as seleções do usuário
 let horarioSelecionado = null;
 
 // Ouvintes de eventos para buscar disponibilidade quando alterar Data ou Serviço
+
 selectServico.addEventListener("change", verificarECarregarHorarios);
 inputData.addEventListener("change", verificarECarregarHorarios);
 
 function verificarECarregarHorarios() {
+  instrucao.classList.add("escondido");
   const servico = selectServico.value;
   const data = inputData.value;
+  // Atualiza a data por extenso na tela assim que uma data for selecionada
+  const pDataEscolhida = document.getElementById("data-escolhida");
+  if (data && pDataEscolhida) {
+    const partes = data.split("-");
+    const dataObjeto = new Date(Number(partes[0]), Number(partes[1]) - 1, Number(partes[2]));
 
+    const dataFormatadaExtenso = new Intl.DateTimeFormat("pt-BR", {
+      weekday: "long",
+      day: "2-digit",
+      month: "long",
+      year: "numeric"
+    }).format(dataObjeto);
+
+    // Exemplo de saída: "sexta-feira, 05 de setembro de 2026"
+    pDataEscolhida.textContent = dataFormatadaExtenso;
+  } else if (pDataEscolhida) {
+    pDataEscolhida.textContent = "";
+  }
   // Só busca na API se ambos os campos estiverem preenchidos
   if (servico && data) {
-    ulHorarios.innerHTML = "<li>Carregando horários disponíveis...</li>";
+    avisos.innerHTML = "<p class='temporario'>Atualizando horários disponíveis...</p>";
     ocultarCamposCliente();
 
     // Faz a chamada GET para o Apps Script
@@ -28,25 +49,27 @@ function verificarECarregarHorarios() {
       .then(res => res.json())
       .then(resposta => {
         if (resposta.sucesso) {
+          avisos.innerHTML = "";
           renderizarHorarios(resposta.horarios);
         } else {
-          ulHorarios.innerHTML = `<li>Erro: ${resposta.erro}</li>`;
+          avisos.innerHTML = `<p class="temporario">Erro: ${resposta.erro}</p>`;
         }
       })
       .catch(err => {
         console.error("Erro na requisição:", err);
-        ulHorarios.innerHTML = "<li>Erro ao buscar horários. Tente novamente.</li>";
+        avisos.innerHTML = "<p class='temporario'>Erro ao buscar horários. Tente novamente.</p>";
       });
   }
 }
 
 // Exibe os botões de horário na tela
 function renderizarHorarios(horarios) {
+ 
   ulHorarios.innerHTML = "";
   horarioSelecionado = null;
 
   if (horarios.length === 0) {
-    ulHorarios.innerHTML = "<li>Nenhum horário disponível para esta data.</li>";
+    avisos.innerHTML = "<p class='temporario'>Nenhum horário disponível para esta data. Selecione outra data.</p>";
     return;
   }
 
