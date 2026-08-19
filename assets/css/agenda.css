@@ -64,6 +64,7 @@
 .campo select,
 .campo input[type="date"] {
     width: 100%;
+    box-sizing: border-box;
     padding: 14px 16px;
     font-size: 0.95rem;
     color: var(--cor-texto-escuro);
@@ -72,7 +73,7 @@
     border-radius: 12px;
     outline: none;
     transition: all 0.2s ease-in-out;
-    font-family: inherit;
+    f
 }
 
 .campo select:focus,
@@ -168,9 +169,6 @@
         padding: 1.8rem 1.2rem;
         margin-bottom: 2rem;
         max-width: 380px;
-    }
-    .campo input[type="date"] {
-        width: 100%;
     }
     .horarios {
         grid-template-columns: repeat(3, 1fr);
